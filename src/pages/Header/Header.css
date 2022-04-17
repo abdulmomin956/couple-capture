@@ -1,0 +1,14 @@
+.header a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.header {
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+}
+
+nav a {
+    margin: 1rem 2rem;
+}
