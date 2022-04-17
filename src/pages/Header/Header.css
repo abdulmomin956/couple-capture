@@ -1,14 +1,6 @@
-.header a {
-    text-decoration: none;
-    text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
 
-.header {
-    margin: 1rem auto;
-    width: 80%;
-    text-align: center;
-}
-
-nav a {
-    margin: 1rem 2rem;
+.navigation-bar {
+    right: 50%;
+    left: 50%;
 }

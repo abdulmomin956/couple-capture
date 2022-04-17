@@ -1,14 +1,15 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
+
     return (
         <div>
-            <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
+            <Navbar bg="-" expand="lg">
+                <Container className='d-flex flex-column'>
+                    <Navbar.Brand as={Link} to="/" className='m-0' style={{ fontSize: "3rem", fontFamily: 'Send Flowers' }}>Couple Capture</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

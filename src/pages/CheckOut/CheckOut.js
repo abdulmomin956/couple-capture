@@ -2,7 +2,7 @@ import React from 'react';
 
 const CheckOut = () => {
     return (
-        <div>
+        <div className='position-absolute'>
             <h1>This is Checkout page</h1>
         </div>
     );
