@@ -3,12 +3,13 @@ import './App.css';
 import About from './pages/About/About';
 import Blogs from './pages/Blogs/Blogs';
 import CheckOut from './pages/CheckOut/CheckOut';
-import Header from './pages/Header/Header';
+import Header from './shared/Header/Header';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import Register from './pages/Register/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './shared/Footer/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/register' element={<Register></Register>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
+        <Footer></Footer>
       </div>
     </div>
   );
