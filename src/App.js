@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Register from './pages/Register/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './shared/Footer/Footer';
+import RequireAuth from './pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
         <div className='d-flex flex-column justify-content-between'>
           <Routes>
             <Route path='/' element={<Home></Home>}></Route>
-            <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+            <Route path='/checkout' element={
+              <RequireAuth>
+                <CheckOut></CheckOut>
+              </RequireAuth>
+            }></Route>
             <Route path='/blogs' element={<Blogs></Blogs>}></Route>
             <Route path='/about' element={<About></About>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>

@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -17,16 +17,21 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    let location = useLocation();
     const navigate = useNavigate()
+
+    let from = location.state?.from?.pathname || "/";
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passRef.current.value;
         await signInWithEmailAndPassword(email, password);
+
+
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     return (
