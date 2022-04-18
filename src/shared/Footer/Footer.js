@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='container d-flex justify-content-evenly py-5 flex-wrap'>
                 <div className='text-center my-5'>
                     <h5>LATEST FROM BLOGS</h5>
-                    <p>Like the wind, opinions.</p>
+                    <p>Difference between authorization and authentication</p>
                     <Link to='/blogs'><i>Read Blogs</i></Link>
                 </div>
                 <div className='text-center my-5'>
