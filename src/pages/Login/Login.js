@@ -1,10 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
     const emailRef = useRef('');
@@ -32,6 +35,21 @@ const Login = () => {
     }
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('Please enter your email address')
+        }
     }
 
     return (
@@ -64,8 +82,11 @@ const Login = () => {
                         Submit
                     </Button>
                 </Form>
+                <p>Forget password? <button onClick={resetPassword} className='fw-bold btn btn-link pe-auto text-decoration-none'>Reset password </button></p>
+                <ToastContainer></ToastContainer>
                 <p className='mt-3'>Are you new?<Link className='ms-2 fw-bold text-decoration-none' to='/register'>Please Register</Link></p>
                 <SocialLogin></SocialLogin>
+
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Service from '../Service/Service';
 import './Home.css'
 
 
@@ -9,6 +10,14 @@ const Home = () => {
     window.onresize = () => {
         setMyWidth(window.innerWidth);
     }
+
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch('FakeData.json')
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
+
 
 
     return (
@@ -31,6 +40,14 @@ const Home = () => {
                         <img src="https://i.ibb.co/yn6hSwf/pexels-aleksandr-neplokhov-1371800.png" alt="" />
                     </div>
                 </div> */}
+            </section>
+            <section className='my-5'>
+                <h3 className='text-center'>Services</h3>
+                <div className="d-flex flex-wrap justify-content-evenly">
+                    {
+                        services.map(service => <Service key={service.id} props={service}></Service>)
+                    }
+                </div>
             </section>
         </main>
     );
