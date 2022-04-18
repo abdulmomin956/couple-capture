@@ -16,16 +16,18 @@ function App() {
     <div>
       <div className="">
         <Header></Header>
-        <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
-          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-          <Route path='/about' element={<About></About>}></Route>
-          <Route path='/login' element={<Login></Login>}></Route>
-          <Route path='/register' element={<Register></Register>}></Route>
-          <Route path='*' element={<NotFound></NotFound>}></Route>
-        </Routes>
-        <Footer></Footer>
+        <div className='d-flex flex-column justify-content-between'>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+            <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+            <Route path='/about' element={<About></About>}></Route>
+            <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/register' element={<Register></Register>}></Route>
+            <Route path='*' element={<NotFound></NotFound>}></Route>
+          </Routes>
+          <Footer></Footer>
+        </div>
       </div>
     </div>
   );

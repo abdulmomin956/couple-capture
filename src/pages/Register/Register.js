@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const nameRef = useRef('');
@@ -35,7 +37,7 @@ const Register = () => {
 
     return (
 
-        <div>
+        <div className='h-100 my-5'>
             <h1 className='text-center'>Please Register</h1>
             <div className="w-50 mx-auto">
                 <Form onSubmit={handleSubmit}>
@@ -67,6 +69,8 @@ const Register = () => {
                         Register
                     </Button>
                 </Form>
+                <p className='mt-3'>Already have an account?<Link className='ms-2 fw-bold text-decoration-none' to='/login'>Please Login</Link></p>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
 
