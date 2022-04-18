@@ -33,7 +33,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/blogs">BLOGS</Nav.Link>
                             {
                                 user ?
-                                    <NavDropdown title={user?.displayName.toUpperCase()} id="basic-nav-dropdown">
+                                    <NavDropdown title={user?.displayName?.toUpperCase()} id="basic-nav-dropdown">
                                         <NavDropdown.Item onClick={handleSignOut}>Sign Out</NavDropdown.Item>
                                     </NavDropdown>
                                     :
