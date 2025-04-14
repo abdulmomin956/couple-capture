@@ -30,9 +30,8 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
         await signInWithEmailAndPassword(email, password);
-
-
     }
+
     if (user) {
         navigate(from, { replace: true });
     }

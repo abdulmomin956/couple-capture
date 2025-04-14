@@ -4,7 +4,7 @@ const Features = ({ props }) => {
 
     return (
         <div>
-            - {props}
+            {props}
         </div>
     );
 };

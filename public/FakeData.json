@@ -3,9 +3,9 @@
         "id": 1,
         "name": "SMART PACKAGE",
         "features": [
-            "6 hours coverage",
-            "Online gallery",
-            "Wedding Album"
+            "🕗 6 hours coverage",
+            "🖼️ Online gallery",
+            "📘 Wedding Album"
         ],
         "price": 2500
     },
@@ -13,10 +13,10 @@
         "id": 2,
         "name": "BEST OPTION",
         "features": [
-            "8 hours coverage",
-            "Online gallery",
-            "Wedding Album",
-            "Special services"
+            "🕗 8 hours coverage",
+            "🖼️ Online gallery",
+            "📘 Wedding Album",
+            "✨ Special services"
         ],
         "price": 3000
     },
@@ -24,11 +24,11 @@
         "id": 3,
         "name": "FULL PACKAGE",
         "features": [
-            "24 hours coverage",
-            "Online gallery",
-            "Wedding album",
-            "Special services",
-            "Wedding movie"
+            "🕗 24 hours coverage",
+            "🖼️ Online gallery",
+            "📘 Wedding album",
+            "✨ Special services",
+            "📹 Wedding movie"
         ],
         "price": 4000
     }
